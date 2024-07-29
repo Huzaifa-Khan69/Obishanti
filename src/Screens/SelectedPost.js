@@ -3,20 +3,24 @@ import React from 'react'
 import images from '../assets/images'
 import Post from '../Components/Post'
 
-const SelectedPost = () => {
+const SelectedPost = ({navigation,route}) => {
+  const {post} = route.params;
+  console.log(post)
   return (
     <ScrollView>
     <Post
-          profilepic={images.story1}
-          uname={'Charles James'}
-          time={'7h'}
+          profilepic={post.profilepic}
+          uname={post.uname}
+          time={post.time}
           text={
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut'
+            post.text
           }
-          img={<Image source={images.bigpic} style={{alignSelf: 'center'}} />}
-          likes={"196"}
-          comments={"20"}
-          share={"6"}
+          img={<Image source={post.img} style={{alignSelf: 'center'}} />}
+          likes={post.likes}
+          comments={post.comments}
+          share={post.share}
+          community={post.community}
+          commentOnPress={()=>navigation.navigate("PostComment",{post:post})}
         />
     </ScrollView>
   )

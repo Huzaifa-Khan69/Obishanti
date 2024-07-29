@@ -39,5 +39,15 @@ export default Images={
     video2:require("./video2.png"),
     video3:require("./video3.png"),
     bigpic:require("./bigpic.png"),
-
+    shared1:require("./shared1.png"),
+    shared2:require("./shared2.png"),
+    shared3:require("./shared3.png"),
+    shared4:require("./shared4.png"),
+    shared5:require("./shared5.png"),
+    shared6:require("./shared6.png"),
+    unevenlines:require("./unevenlines.png"),
+    profilebackground:require("./profilebackground.png"),
+    picture:require("./picture.png"),
+    lock:require("./lock.png"),
+    reels:require("./reels.png"),
 }

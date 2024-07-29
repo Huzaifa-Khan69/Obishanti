@@ -23,7 +23,7 @@ const Splash2 = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigation.navigate('Screen1');
-    },2500); // Adjust the delay time in milliseconds (e.g., 1000ms = 1 second)
+    },2000); // Adjust the delay time in milliseconds (e.g., 1000ms = 1 second)
 
     return () => clearTimeout(timer);
   }, [navigation]);

@@ -20,6 +20,14 @@ import Navigation from './src/Routes/Navigation';
 import SelectedPost from './src/Screens/SelectedPost';
 import PostComment from './src/Screens/PostComment';
 import NotificationScreen from './src/Screens/NotificationScreen';
+import Chats from './src/Screens/Chats';
+import ChatInner from './src/Screens/ChatInner';
+import Chatprofile from './src/Screens/Chatprofile';
+import Profile from './src/Screens/Profile';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
+import {persistor, store} from './src/redux/Store';
+import Reels from './src/Screens/Reels';
 
 const App = () => {
   return (
@@ -39,10 +47,20 @@ const App = () => {
     // <Discover/>
     // <Search/>
     // <RecentSearch/>
-    // <Navigation/>
     // <SelectedPost/>
     // <PostComment/>
-    <NotificationScreen/>
+    // <NotificationScreen/>
+    // <Chats/>
+    // <ChatInner/>
+    // <Chatprofile/>
+    // <Profile/>
+    // <Reels/>
+
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Navigation />
+      </PersistGate>
+    </Provider>
   );
 };
 

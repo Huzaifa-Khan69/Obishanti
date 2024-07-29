@@ -13,6 +13,7 @@ const SignUp = ({navigation}) => {
     <Header
       icon={<AntDesign name={'arrowleft'} size={25} color={'black'} />}
       text={'My Petz'}
+      onPress={() => navigation.goBack()}
     />
     <View
         style={{alignItems: 'center', justifyContent: 'center',flex:1}}>

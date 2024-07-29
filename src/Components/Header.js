@@ -1,8 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import color from '../Theme/color';
 
-const Header = ({icon, text,headerStyle,textStyle}) => {
+const Header = ({icon, text,headerStyle,textStyle,onPress}) => {
   return (
     <View
       style={[{
@@ -12,7 +12,9 @@ const Header = ({icon, text,headerStyle,textStyle}) => {
         width: '90%',
         height: 60,
       },headerStyle]}>
+        <TouchableOpacity onPress={onPress}>
       {icon ? icon : null}
+      </TouchableOpacity>
       <Text style={[{color: color.purple, fontSize: 25},textStyle]}>{text}</Text>
       <View />
     </View>

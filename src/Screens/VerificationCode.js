@@ -12,6 +12,7 @@ const VerificationCode = ({navigation}) => {
       <Header
         icon={<AntDesign name={'arrowleft'} size={25} color={'black'} />}
         text={'My Petz'}
+        onPress={() => navigation.goBack()}
       />
       <View style={{alignItems: 'center', justifyContent: 'center',marginTop:50}}>
         <Text style={{color: 'black', fontSize: 30}}>Verification Code</Text>

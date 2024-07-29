@@ -2,7 +2,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import color from '../Theme/color';
 
-const Header2 = ({title, icon1, icon2}) => {
+const Header2 = ({title, icon1, icon2,onPress1,onPress2}) => {
   return (
     <View
       style={{
@@ -23,6 +23,7 @@ const Header2 = ({title, icon1, icon2}) => {
           justifyContent: 'space-between',
         }}>
         <TouchableOpacity
+        onPress={onPress1}
           style={{
             borderWidth: 2,
             borderColor: color.purple,
@@ -35,6 +36,7 @@ const Header2 = ({title, icon1, icon2}) => {
           {icon1 ? icon1 : null}
         </TouchableOpacity>
         <TouchableOpacity
+        onPress={onPress2}
           style={{
             left: 10,
             borderWidth: 2,

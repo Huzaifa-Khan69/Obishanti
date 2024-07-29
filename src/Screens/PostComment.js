@@ -16,7 +16,8 @@ import images from '../assets/images';
 import Comment from '../Components/Comment';
 import color from '../Theme/color';
 
-const PostComment = () => {
+const PostComment = ({navigation,route}) => {
+  const {post} = route.params;
   return (
     <View style={{flex: 1, backgroundColor: '#F3FDFF'}}>
       <Header2
@@ -25,23 +26,26 @@ const PostComment = () => {
         icon2={<AntDesign name={'hearto'} size={20} color={'black'} />}
       />
       <ScrollView>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
         <AntDesign
           name={'arrowleft'}
           size={25}
           color={'black'}
           style={{left: 12}}
         />
+        </TouchableOpacity>
         <Post
-          profilepic={images.story1}
-          uname={'Charles James'}
-          time={'7h'}
+          profilepic={post.profilepic}
+          uname={post.uname}
+          time={post.time}
           text={
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut'
+            post.text
           }
-          img={<Image source={images.bigpic} style={{alignSelf: 'center'}} />}
-          likes={'196'}
-          comments={'20'}
-          share={'6'}
+          img={<Image source={post.img} style={{alignSelf: 'center'}} />}
+          likes={post.likes}
+          comments={post.comments}
+          share={post.share}
+          community={post.community}
         />
         <Comment
           img={images.story2}
@@ -126,6 +130,7 @@ const PostComment = () => {
             marginVertical: 8,
             paddingLeft: 20,
             fontSize: 18,
+            color:"black"
           }}
         />
         <TouchableOpacity

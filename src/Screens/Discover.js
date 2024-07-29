@@ -7,17 +7,23 @@ import DiscoverImages from '../Components/DiscoverImages';
 import images from '../assets/images';
 import BottomTab from '../Components/BottomTab';
 import DiscoverVideo from '../Components/DiscoverVideo';
+import { useDispatch } from 'react-redux';
+import { selectOption } from '../redux/ColorSlice';
 
-const Discover = () => {
+const Discover = ({navigation}) => {
+  const dispatch=useDispatch()
   return (
     <View style={{flex: 1, backgroundColor: '#E4E4E4'}}>
       <Header2
         title={'My Petz'}
         icon1={<Entypo name={'direction'} size={25} color={'black'} />}
         icon2={<AntDesign name={'hearto'} size={20} color={'black'} />}
+        onPress1={() => navigation.navigate('Chats')}
+        onPress2={() => navigation.navigate('NotificationScreen')}
       />
       <View style={{alignItems: 'center', justifyContent: 'center'}}>
         <TextInput
+        onPress={()=>navigation.navigate("Search")}
           placeholder="Search"
           style={{
             height: 45,
@@ -61,7 +67,18 @@ const Discover = () => {
       ViewStyle={{flexDirection:"row-reverse"}}
       />
       </ScrollView>
-      <BottomTab/>
+      <BottomTab
+        homeOnPress={() => {
+          navigation.navigate('Home'), dispatch(selectOption(0));
+        }}
+        discoverOnPress={() => {
+          navigation.navigate('Discover'), dispatch(selectOption(1));
+        }}
+        accountOnPress={() => {
+          navigation.navigate('Profile'), dispatch(selectOption(5));
+        }}
+        reelsOnPress={()=>{navigation.navigate("Reels"), dispatch(selectOption(4))}}
+      />
     </View>
   );
 };
